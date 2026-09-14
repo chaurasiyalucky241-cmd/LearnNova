@@ -1,0 +1,82 @@
+html, body, #root {
+  margin: 0;
+  min-height: 100%;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  background: #0a0118;
+}
+
+h1, h2, h3, .brand-title {
+  font-family: "Space Grotesk", "Inter", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+}
+
+.brand-mark {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  overflow: visible;
+}
+
+.brand-mark-layer {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  transition: opacity 0.4s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.4s ease, color 0.4s ease;
+  will-change: opacity, transform, filter;
+}
+
+.brand-mark-layer svg {
+  display: block;
+}
+
+.brand-mark-layer-cap {
+  color: #fff;
+  opacity: 1;
+  transform: translateY(0) scale(1) rotate(0deg);
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.14));
+}
+
+.brand-mark-layer-trend {
+  color: var(--cyan, #00d4ff);
+  opacity: 0;
+  transform: translateY(10px) scale(0.55) rotate(-14deg);
+  filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3));
+}
+
+.brand-mark.is-signed-in .brand-mark-layer-cap {
+  opacity: 0;
+  transform: translateY(-10px) scale(0.55) rotate(-20deg);
+}
+
+.brand-mark.is-signed-in .brand-mark-layer-trend {
+  opacity: 1;
+  transform: translateY(0) scale(1) rotate(0deg);
+}
+
+.brand-logo-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: inherit;
+}
